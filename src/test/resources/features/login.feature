@@ -1,28 +1,27 @@
-@regression @smoke
+@loginFunctionality
 Feature: Library app login feature
   User Story:
   As a user, I should be able to login with correct credentials to different accounts. And dashboard should be displayed.
-  Accounts are: librarian, student, admin
+  Accounts are: librarian, student
 
-    #THIS IS HOW WE COMMENT IN FEATURE FILE
 
-  @librarian @employee
-  Scenario: Login as librarian
-    Given user is on the login page
-    When user enters librarian username
-    And user enters librarian password
-    Then user should see the dashboard
+
+  @librarian
+Scenario: Librarian login functionality
+    Given user is on Cybertek Library App Login page
+    When librarian enters correct credentials
+    #Correct Credentials: EMAIL - librarian13@library  PASSWORD - 9rf6axdD
+    And clicks sign in button
+    Then librarian dashboard should be displayed
+
 
   @student
-  Scenario: Login as student
-    Given user is on the login page
-    When user enters student username
-    And user enters student password
-    Then user should see the dashboard
+  Scenario: Student login functionality
+    Given user is on Cybertek Library App Login page
+    When student enters correct credentials
+    #Correct Credentials: EMAIL - student11@library  PASSWORD - tScBPCUr
+    And clicks sign in button
+    Then student dashboard should be displayed
 
-  @admin @employee
-  Scenario: Login as admin
-    Given user is on the login page
-    When user enters admin username
-    And user enters admin password
-    Then user should see the dashboard
+
+
